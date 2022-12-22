@@ -185,6 +185,66 @@ nav ul li a:hover {
   padding-bottom: 40px;
 }
 
+.card-calendar {
+  order: 1;
+}
+.card-calendar_bottom {
+  margin-top: 35px;
+}
+.card-calendar_footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 54px 40px 23px;
+  gap: 7px;
+  cursor: pointer;
+}
+.card-calendar_footer:hover {
+  color: #008948;
+}
+.card-calendar_footer__wrapper > a {
+  text-decoration: none;
+  color: #000;
+}
+.card-calendar_date {
+  padding: 20px;
+  background-color: #D8E8C5;
+  border-top-right-radius: 25px;
+  padding: 20px;
+  width: 73px;
+  font-size: 16px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  text-transform: uppercase;
+  line-height: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-calendar_date > span {
+  font-size: 20px;
+}
+.card-calendar_title {
+  margin: 30px 40px 20px;
+  text-align: left;
+  font-size: 21px;
+}
+.card-calendar_content {
+  margin-bottom: 12px;
+}
+.card-calendar_content__wrapper {
+  margin: 0 15px;
+  height: 93px;
+  text-align: left;
+}
+.card-calendar_content__add {
+  color: #008948;
+  text-decoration: none;
+}
+.card-calendar_content__add a {
+  text-align: left;
+}
+.card-calendar_content__add > img {
+  margin-right: 10px;
+}
+
 .cards-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -227,6 +287,7 @@ nav ul li a:hover {
   letter-spacing: -0.015em;
   align-items: center;
   cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .cards-press_content:hover {
   opacity: 0.6;
@@ -235,10 +296,15 @@ nav ul li a:hover {
   display: flex;
   justify-content: flex-end;
   margin: 64px 40px 23px;
-  gap: 7px;
   cursor: pointer;
 }
-.cards-press_footer:hover {
+.cards-press_footer > a {
+  display: flex;
+  gap: 7px;
+  text-decoration: none;
+  color: #000;
+}
+.cards-press_footer > a:hover {
   color: #008948;
 }
 

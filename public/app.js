@@ -1,3 +1,47 @@
+const cards =  [
+    {   
+        title: 'Press release',
+        date: '13 December 2021',
+        dateBottom: '21 December 2021',
+        regulatory: 'Regulatory',
+        regulatoryBottom: 'Regulatory',
+        content: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
+        contentBottom: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
+        footer: 'All press releases',
+        href: 'pressreleases'
+    },
+    {
+        title: 'Finacial Reports',
+        date: '13 December 2021',
+        dateBottom: '28 December 2021',
+        regulatory: '',
+        content: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
+        contentBottom: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
+        footer: 'All financials reports',
+        href: 'financialsreports'
+    }
+];
+
+const miniCardsData = [
+    {
+        title: 'Lorem ipsum',
+        description: 'Lorem ipsum',
+        image: 'assets/mini-card1.png',
+        href: 'loremipsum'
+    },
+    {
+        title: 'Lorem ipsum',
+        description: 'Lorem ipsum',
+        image: 'assets/mini-card2.png',
+        href: 'loremipsum'
+    },
+    {
+        title: 'Lorem ipsum',
+        description: 'Lorem ipsum',
+        image: 'assets/mini-card1.png',
+        href: 'loremipsum'
+    }
+]
 
 const searchBtn = document.querySelector(".nav-search_btn");
 const closeBtn = document.querySelector(".nav-search_close");
@@ -31,63 +75,13 @@ menuToggle.onclick = function click() {
 // closeSideBar.onclick = function click() {
 //     nav.classList.toggle("open");
 //     menuToggle.classList.remove("hide");
-    // closeSideBar.classList.remove("active");
+//     closeSideBar.classList.remove("active");
 // }
-
-const cards =  [
-        {   
-            title: 'Press release',
-            date: '13 December 2021',
-            date2: '21 December 2021',
-            regulatory: 'Regulatory',
-            regulatory2: 'Regulatory',
-            content: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
-            content2: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
-            footer: 'All press releases'
-        },
-        {   
-            title: 'Finacial Reports',
-            date: '13 December 2021',
-            date2: '28 December 2021',
-            regulatory: '',
-            content: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
-            content2: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
-            footer: 'All financials reports'
-        },
-        {   
-            title: 'Calendar',
-            date: '20 Dec 2021',
-            date2: '30 Sep 2021',
-            regulatory: '',
-            content: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
-            content2: 'Praesent eu velit ac diam mollis elementum sit amet ac felis',
-            footer: 'All events'
-        },
-];
-
-const miniCardsData = [
-    {
-        title: 'Lorem ipsum',
-        description: 'Lorem ipsum',
-        image: 'assets/mini-card1.png'
-    },
-    {
-        title: 'Lorem ipsum',
-        description: 'Lorem ipsum',
-        image: 'assets/mini-card2.png'
-    },
-    {
-        title: 'Lorem ipsum',
-        description: 'Lorem ipsum',
-        image: 'assets/mini-card1.png'
-    },
-
-]
 
 const cardsSection = document.querySelector(".cards-wrapper");
 const miniCardsSection = document.querySelector(".mini-cards_wrapper");
 
-const displayCard = (title, date, regulatory, content, date2, regulatory2, content2, footer) => {
+const displayCard = (title, date, regulatory, content, dateBottom, regulatoryBottom, contentBottom, href, footer) => {
     const card = document.createElement("div");
     card.classList.add("cards-press");
 
@@ -121,22 +115,22 @@ const displayCard = (title, date, regulatory, content, date2, regulatory2, conte
     dateWrapper2.classList.add("cards-press_date");
 
     const cardDate2 = document.createElement("h5");
-    cardDate2.textContent = date2;
+    cardDate2.textContent = dateBottom;
 
     const label2 = document.createElement("h5");
     label2.classList.add("cards-press_date__label");
-    label2.textContent = regulatory2;
+    label2.textContent = regulatoryBottom;
 
     const contentWrapper2 = document.createElement("div");
     contentWrapper2.classList.add("cards-press_content");
-    contentWrapper2.textContent = content2;
+    contentWrapper2.textContent = contentBottom;
     
-
-    //card 3
-
-    //footer
     const footerWrapper = document.createElement("div");
     footerWrapper.classList.add("cards-press_footer");
+
+    const footerAnchor = document.createElement("a");
+    footerAnchor.classList.add("card-calendar_footer__wrapper");
+    footerAnchor.setAttribute("href", `/${href}`);
 
     const footerContent = document.createElement("h4");
     footerContent.textContent = footer;
@@ -150,6 +144,7 @@ const displayCard = (title, date, regulatory, content, date2, regulatory2, conte
 
     card.appendChild(wrapper);
     card.appendChild(wrapper2);
+
     card.appendChild(footerWrapper);
 
     wrapper.appendChild(titleCard);
@@ -164,23 +159,28 @@ const displayCard = (title, date, regulatory, content, date2, regulatory2, conte
     wrapper.appendChild(contentWrapper);
     wrapper2.appendChild(contentWrapper2);
 
-    footerWrapper.appendChild(footerContent);
-    footerWrapper.appendChild(footerIcon);
+    footerWrapper.appendChild(footerAnchor);
+    footerAnchor.appendChild(footerContent);
+    footerAnchor.appendChild(footerIcon);
 
 };
 
 const generateCard = () => {
     cards.map( c => {
-        displayCard(c.title, c.date, c.regulatory, c.content, c.date2, c.regulatory2, c.content2, c.footer);
+        displayCard(c.title, c.date, c.regulatory, c.content, c.dateBottom, c.regulatoryBottom, c.contentBottom, c.href, c.footer);
     })
 };
 
 generateCard();
 
-const displayMiniCards = (title, description) => {
+const displayMiniCards = (title, description, href) => {
 
     const miniCard = document.createElement("div");
     miniCard.classList.add("mini-cards");
+
+    const miniCardAnchor = document.createElement("a");
+    // footerAnchor.classList.add("card-calendar_footer__wrapper");
+    miniCardAnchor.setAttribute("href", `/${href}`);
 
     // const miniCardsImg = document.createElement("img");
     // miniCardsImg.setAttribute("src", `${image}`);
@@ -203,35 +203,22 @@ const displayMiniCards = (title, description) => {
     miniCardIcon.setAttribute("alt", "arrow-white");
 
     miniCardsSection.appendChild(miniCard);
-    // miniCard.appendChild(miniCardsImg);
-    miniCard.appendChild(contentWrapper);
-    
-    // card.appendChild(wrapper2);
-    // card.appendChild(footerWrapper);
+
+    miniCard.appendChild(miniCardAnchor);
+    miniCardAnchor.appendChild(contentWrapper)
+
 
     contentWrapper.appendChild(miniCardContent);
-    // contentWrapper.appendChild(miniCardImg);
-    
-    // wrapper2.appendChild(dateWrapper2);
 
     miniCardContent.appendChild(miniCardTitle);
     miniCardContent.appendChild(miniCardDescription);
-
-    // dateWrapper2.appendChild(cardDate2);
-    // dateWrapper.appendChild(label);
-    
-    // wrapper.appendChild(contentWrapper);
-    // wrapper2.appendChild(contentWrapper2);
-
-    // footerWrapper.appendChild(footerContent);
-    // footerWrapper.appendChild(footerIcon);
 
 }
 
 
 const generateMiniCard = () => {
     miniCardsData.map( mc => {
-        displayMiniCards(mc.title, mc.description);
+        displayMiniCards(mc.title, mc.description, mc.href);
     })
 };
 
