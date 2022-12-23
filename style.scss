@@ -323,7 +323,7 @@ nav {
         &_title {
             margin: 30px 40px 20px;
             text-align: left;
-            font-size: 26px;
+            font-size: 21px;
         }
 
         &_content {
@@ -1001,7 +1001,8 @@ nav {
     
     .card-calendar_title {
         margin-top: 27px;
-        font-size: 21px;
+        font-size: 26px;
+        margin-left: 20px;
     }
 
     .middle-wrap {
@@ -1169,9 +1170,9 @@ nav {
     }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 414px) {
     .bottom {
-        left: 1%;
+        left: 3%;
     }
 }
 

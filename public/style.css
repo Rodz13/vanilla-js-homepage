@@ -259,7 +259,7 @@ nav ul li a:hover {
 .card-calendar_title {
   margin: 30px 40px 20px;
   text-align: left;
-  font-size: 26px;
+  font-size: 21px;
 }
 .card-calendar_content {
   margin-bottom: 12px;
@@ -785,7 +785,8 @@ nav ul li a:hover {
   }
   .card-calendar_title {
     margin-top: 27px;
-    font-size: 21px;
+    font-size: 26px;
+    margin-left: 20px;
   }
   .middle-wrap {
     left: 31%;
@@ -907,9 +908,9 @@ nav ul li a:hover {
     flex-direction: column-reverse;
   }
 }
-@media (max-width: 412px) {
+@media (max-width: 414px) {
   .bottom {
-    left: 1%;
+    left: 3%;
   }
 }
 @media (max-width: 390px) {
