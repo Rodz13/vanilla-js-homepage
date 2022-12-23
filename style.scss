@@ -632,7 +632,7 @@ nav {
         &_wrapper {
             display: flex;
             margin-top: 20px;
-            gap: 365px;
+            gap: 390px;
             padding: 0 110px;
         }
 
@@ -804,7 +804,7 @@ nav {
         &-socials {
             &_wrapper {
                 padding: 0;
-                gap: 335px;
+                gap: 325px;
             }
         }   
     }
@@ -812,7 +812,6 @@ nav {
 
 
 @media (max-width: 1200px) {
-
     .icon-plus {
         visibility: visible;
     }
@@ -920,6 +919,18 @@ nav {
         }
     }
 
+    .cards-press {
+        width: 300px;
+
+        &_footer {
+            margin-top: 6px;
+        }
+    }
+
+    .mini-cards {
+        width: 300px;
+    }
+
     .mini-cards {
         &_wrapper {
             padding: 0 40px;
@@ -955,9 +966,14 @@ nav {
         }
 
         &-socials {
-            padding: 0 60px;
+            padding: 0;
             justify-content: center;
-            gap: 200px;
+            gap: 260px;
+    
+            &_wrapper {
+                gap: 215px;
+                justify-content: center;
+            }
         }
     }
 }
@@ -990,28 +1006,13 @@ nav {
 
     .footer {
         &-socials_wrapper {
-            padding: 0;
+            padding: 0 40px;
             gap: 230px;
         }
     }
 }
 
-@media (max-width: 1100px) {
-    .cards-wrapper, .mini-cards_wrapper {
-        padding: 0 10px;
-    }
-
-    .footer {
-        padding: 0 40px;
-
-        &-socials_wrapper {
-            padding: 0;
-            gap: 260px;
-        }
-    }
-}
-
-@media (max-width: 860px) {
+@media (max-width: 980px) {
     button {
         width: 364px;
     }
@@ -1126,6 +1127,7 @@ nav {
 
             &_wrapper {
                 display: block;
+                padding: 0;
             }
             
             &_icons, &_policies, &_logo {
