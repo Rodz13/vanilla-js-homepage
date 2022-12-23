@@ -5,9 +5,9 @@ The repo has been deploy using Vercel tool and it can be seen here - https://ekl
 
 
 ### How to run
-    - Dev - `npm run dev run` - locally - http://localhost:3000/
-    - Compile CSS - `npm run complie` - it will watch for any changes in the CSS
-    - Build webpack - `npm run build` or `npm run build:watch` to watch webpack changes
+- Dev - `npm run dev run` - locally - http://localhost:3000/
+- Compile CSS - `npm run complie` - it will watch for any changes in the CSS
+- Build webpack - `npm run build` or `npm run build:watch` to watch webpack changes
 
 
 ## Things to consider
