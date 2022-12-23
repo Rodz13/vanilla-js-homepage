@@ -885,6 +885,10 @@ nav {
         &-search {
             display: flex;
 
+            &_btn.hide {
+                visibility: hidden;
+            }
+
             &_icon {
                 display: flex;
             }

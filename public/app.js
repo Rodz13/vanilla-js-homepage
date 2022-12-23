@@ -77,6 +77,7 @@ menuToggle.onclick = function click() {
     nav.classList.toggle("open");
     menuToggle.classList.add("hide");
     closeSideBar.classList.add("active");
+    searchBtn.classList.add("hide");
     document.getElementById("hero").style.visibility = "hidden";
     document.getElementById("cards").style.visibility = "hidden";
 }
@@ -85,6 +86,7 @@ closeSideBar.onclick = function click() {
     nav.classList.toggle("open");
     menuToggle.classList.remove("hide");
     closeSideBar.classList.remove("active");
+    searchBtn.classList.remove("hide");
     document.getElementById("hero").style.visibility = "visible";
     document.getElementById("cards").style.visibility = "visible";
 }

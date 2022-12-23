@@ -703,6 +703,9 @@ nav ul li a:hover {
   .nav-search {
     display: flex;
   }
+  .nav-search_btn.hide {
+    visibility: hidden;
+  }
   .nav-search_icon {
     display: flex;
   }
