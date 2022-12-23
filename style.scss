@@ -6,6 +6,15 @@ $white: #FFFFFF;
 $pink: #EB5C6C;
 $light-black: #333333;
 $hover-pink: #C84D5B;
+$gray-fog: #EBEBEB;
+
+// $breakpoint-mobile: 480px;
+// $breakpoint-l-mobile: 767px;
+// $breakpoint-tablet: 820px;
+// $breakpoint-laptops: 1024px;
+// $breakpoint-desktops: 1200px;
+// $breakpoint-screen-xl: 1600px;
+
 
 * {
     margin: 0;
@@ -34,6 +43,28 @@ button {
 .small-button {
     width: 146px;
     padding: 11px 23px;
+}
+
+.container {
+    &.open {
+        padding-top: 80px;
+    }
+}
+
+.icon-minus {
+    display: none;
+
+    &.clicked {
+        display: block;
+    }
+}
+
+.icon-plus {
+    visibility: hidden;
+
+    &.hide {
+        display: none;
+    }
 }
 
 nav {
@@ -68,6 +99,10 @@ nav {
                 text-decoration: none;
                 color: $black;
 
+                & ion-icon {
+                    display: none;
+                }
+
                 &:hover {
                     color: $green;
                     border-bottom: 2px solid $green;
@@ -78,6 +113,24 @@ nav {
 }
 
 .nav {
+    &-navigation {
+        &_menu {
+            display: none;
+            list-style-type: none;
+            
+            &.clicked {
+                display: block;
+            }
+        }
+
+        &_sidebar {
+            :hover {
+                color: $black;
+                border-bottom: 2px solid $black;
+            }
+        }
+    }
+
     &-search {
         position: relative;
         cursor: pointer;
@@ -132,28 +185,31 @@ nav {
             width: 100%;
             height: 100%;
             display: flex;
-            background: $white;
             padding: 0 30px;
             align-items: center;
             transition: 0.5s ease-in-out;
             justify-content: center;
             display: none;
+            background-color: $gray-fog;
+            padding: 22px;
 
             &.active {
                 right: 0;
                 display: block;
                 transition: 0.5s;
+                top: 80px;
             }
 
             & input {
-                width: 95%;
+                width: 100%;
                 border: none;
                 outline: none;
-                height: 65px;
+                height: 40px;
                 font-size: 1.25em;
                 background: $white;
-                border-bottom: 1px solid $black;
                 color: #333;
+                border-radius: 24px;
+                padding-left: 35px;
             }
         }
     }
@@ -267,7 +323,7 @@ nav {
         &_title {
             margin: 30px 40px 20px;
             text-align: left;
-            font-size: 21px;
+            font-size: 26px;
         }
 
         &_content {
@@ -352,7 +408,7 @@ nav {
         &_footer {
             display: flex;
             justify-content: flex-end;
-            margin: 64px 40px 23px;
+            margin: 69px 40px 23px;
             cursor: pointer;
 
             & > a {
@@ -435,7 +491,7 @@ nav {
     &-wrap {
         position: absolute;
         top: 50%;
-        left: 33%;
+        left: 31%;
         transform: translate(-50%, -50%);
         width: 561px;
         background: $white;
@@ -569,20 +625,15 @@ nav {
     }
 
     &-socials {
-        display: flex;
-        padding: 40px 145px 20px;
-        gap: 365px;
         color: $white;
         font-family: 'Montserrat';
-        font-weight: 400;
         line-height: 1.5em;
-        align-self: center;
 
         &_wrapper {
             display: flex;
-            gap: 350px;
-            flex-direction: row-reverse;
-
+            margin-top: 20px;
+            gap: 365px;
+            padding: 0 110px;
         }
 
         &_policies > a {
@@ -611,24 +662,194 @@ nav {
     }
 }
 
+@media (min-width: 1790px) {
+    .nav-top {
+        padding: 0 340px 0;
+    }
+
+    nav {
+        padding: 0 340px;
+    }
+    
+    .cards-wrapper {
+        padding: 0 340px;
+    }
+
+    .mini-cards_wrapper {
+        padding: 0 340px;
+    }
+
+    .middle-wrap {
+        left: 34%;
+    }
+
+    .bottom {
+        padding: 60px 340px;
+
+        &-wrap {
+            padding-left: 50px;
+        }
+    }
+
+    .footer {
+        &-wrapper {
+            padding: 45px 340px;
+        }
+
+        &-bottom {
+            padding: 20px 340px;
+        }
+
+        &-socials {
+            &_wrapper {
+                padding: 0;
+                gap: 370px;
+            }
+        }   
+    }
+}
+
+@media screen and (max-width: 1789px) and (min-width: 1600px)  {
+    .nav-top {
+        padding: 0 215px 0;
+    }
+
+    nav {
+        padding: 0 215px;
+    }
+    
+    .cards-wrapper {
+        padding: 0 215px;
+    }
+
+    .mini-cards_wrapper {
+        padding: 0 215px;
+    }
+
+    .middle-wrap {
+        left: 34%;
+    }
+
+    .bottom {
+        padding: 60px 215px;
+
+        &-wrap {
+            padding-left: 50px;
+        }
+    }
+
+    .footer {
+        &-wrapper {
+            padding: 45px 215px;
+        }
+
+        &-bottom {
+            padding: 20px 215px;
+        }
+
+        &-socials {
+            &_wrapper {
+                padding: 0;
+                gap: 370px;
+            }
+        }   
+    }
+}
+
+@media (min-width: 1520px) and (max-width: 1599px) {
+    .cards-wrapper {
+        padding: 0 200px;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1399px) {
+    
+    .nav-top {
+        padding: 0 80px 0;
+    }
+
+    nav {
+        padding: 0 80px;
+    }
+    
+    .cards-wrapper {
+        padding: 0 80px;
+    }
+
+    .mini-cards_wrapper {
+        padding: 0 80px;
+    }
+
+    .middle-wrap {
+        left: 30%;
+    }
+
+    .bottom {
+        padding: 60px 80px;
+
+        &-wrap {
+            padding-left: 50px;
+        }
+    }
+
+    .footer {
+        &-wrapper {
+            padding: 45px 80px;
+        }
+
+        &-bottom {
+            padding: 20px 80px;
+        }
+
+        &-socials {
+            &_wrapper {
+                padding: 0;
+                gap: 335px;
+            }
+        }   
+    }
+}
+
+
 @media (max-width: 1200px) {
+
+    .icon-plus {
+        visibility: visible;
+    }
+
+    .container {
+        &.open {
+            padding-top: 100px;
+        }
+    }
+
     nav {
         top: 0;
-        padding: 0 20px;
+        padding: 0 40px;
 
-        &.open .nav-menu_items {
+        &.open .nav-navigation {
             opacity: 1;
             display: flex;
             flex-direction: column;
             left: 0;
             background-color: $light-gray;
             top: 80px;
+            height: 830px;
         }
 
         & ul {
-    
             & li {
                 padding: 20px 0;
+                font-size: 20px;
+                 
+                & a {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                & a > ion-icon {
+                    display: inline-flex;
+                }
             }
         }
     }
@@ -638,7 +859,7 @@ nav {
             display: none;
         }
 
-        &-menu_items {
+        &-navigation {
             position: absolute;
             opacity: 0;
             display: none;
@@ -646,6 +867,20 @@ nav {
             width: 100%;
             text-align: left;
             padding: 34px 16px;
+
+                &_menu {
+                    display: none;
+                    list-style-type: none;
+                    
+                    &.clicked {
+                        display: inline-grid;
+                    }
+
+                    &__wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
         }
 
         &-search {
@@ -678,52 +913,17 @@ nav {
             }
         }
     }
-
+    
     .cards {
         &-wrapper {
-            padding: 0 115px;
-            gap: 20px;
+            padding: 0 40px;
         }
     }
 
     .mini-cards {
         &_wrapper {
-            padding: 0 115px;
+            padding: 0 40px;
             gap: 20px;
-        }
-    }
-
-    .footer {
-        &-wrapper {
-            padding: 45px 42px;
-        }
-
-        &-socials {
-            column-gap: 165px;
-        }
-    } 
-}
-
-@media (max-width: 1199px) {
-    nav {
-        padding: 0 40px;
-    }
-
-    .cards {
-        &-wrapper {
-            padding: 0 40px;
-        }
-
-        &-press {
-            width: 315px;
-        }
-    }
-
-    .mini-cards {
-        width: 315px;
-
-        &_wrapper {
-            padding: 0 40px;
         }
     }
 
@@ -739,10 +939,15 @@ nav {
 
     .footer {
         &-wrapper {
-            padding: 45px 40px;
+            padding: 45px 60px;
         }
+
         &-top {
-            gap: 30px
+            gap: 20px
+        }
+
+        &-socials {
+            column-gap: 165px;
         }
 
         &-items > h3 {
@@ -750,20 +955,67 @@ nav {
         }
 
         &-socials {
-            padding: 40px;
-            column-gap: 280px;
-
-            &_wrapper {
-                gap: 240px;
-            }
+            padding: 0 60px;
+            justify-content: center;
+            gap: 200px;
         }
     }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 1024px) {
+    nav {
+        padding: 0 40px;
+    }
+
+    .cards-press {
+        width: 300px;
+
+        &_footer {
+            margin-top: 6px;
+        }
+    }
+
+    .mini-cards {
+        width: 300px;
+    }
+    
+    .card-calendar_title {
+        margin-top: 27px;
+        font-size: 21px;
+    }
+
+    .middle-wrap {
+        left: 31%;
+    }
+
+    .footer {
+        &-socials_wrapper {
+            padding: 0;
+            gap: 230px;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .cards-wrapper, .mini-cards_wrapper {
+        padding: 0 10px;
+    }
+
+    .footer {
+        padding: 0 40px;
+
+        &-socials_wrapper {
+            padding: 0;
+            gap: 260px;
+        }
+    }
+}
+
+@media (max-width: 860px) {
     button {
         width: 364px;
     }
+
     .hero {
         &-img {
             height: 202px;
@@ -776,7 +1028,8 @@ nav {
 
     .cards {
         &-wrapper {
-            display: block;
+            display: flex;
+            flex-direction: column;
             padding: 0;
         }
 
@@ -882,7 +1135,7 @@ nav {
     }
 }
 
-@media (max-width: 541px) {
+@media (max-width: 767px) {
     .middle {
         &-wrap {
             left: 52%;
@@ -891,13 +1144,21 @@ nav {
 
     .bottom {
         flex-direction: column-reverse;
-        left: 16%;
+        left: 21%;
     }
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+    nav {
+        padding: 0 20px;
+    }
+    .middle-wrap {
+        left: 50%;
+    }
+
     .bottom {
+        left: 10%;
         flex-direction: column-reverse;
     }
 }
