@@ -1,5 +1,4 @@
-## EklipsTestTask
-Technical task for Eklips Digital using Vanilla Javascrip, CSS(Sass) and HTML.
+## Vanilla JS Dummy Homepage
 
 The repo has been deploy using Vercel tool and it can be seen here - https://eklips-test-task.vercel.app/
 
